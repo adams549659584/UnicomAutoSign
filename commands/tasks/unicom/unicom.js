@@ -38,7 +38,10 @@ var start = async (params) => {
   // 每日游戏楼层宝箱
   await scheduler.regTask('dailygamebox', async (request) => {
     await require('./integral').gamebox(request, options)
-  }, taskOption)
+  },  {
+    ...taskOption,
+    isCircle: true,
+  })
 
   // 每日抽奖
   await scheduler.regTask('dailylotteryintegral', async (request) => {
@@ -48,7 +51,10 @@ var start = async (params) => {
   // 首页-游戏-娱乐中心-沃之树
   await scheduler.regTask('dailywoTree', async (request) => {
     await require('./woTree').doTask(request, options)
-  }, taskOption)
+  }, {
+    ...taskOption,
+    isCircle: true
+  })
 
   await scheduler.regTask('dailyBookRead', async (request) => {
     // 首页-小说-阅读越有礼打卡赢话费
@@ -144,12 +150,18 @@ var start = async (params) => {
   await scheduler.regTask('producGameSignin', async (request) => {
     await require('./producGame').gameSignin(request, options)
     await require('./producGame').gameBox(request, options)
-  }, taskOption)
+  }, {
+    ...taskOption,
+    isCircle: true
+  })
 
   // 首页-游戏-娱乐中心-天天领取3G流量包
   await scheduler.regTask('dailygameflow', async (request) => {
     await require('./producGame').doGameFlowTask(request, options)
-  }, taskOption)
+  }, {
+    ...taskOption,
+    isCircle: true
+  })
 
   // 首页-积分查询-游戏任务
   await scheduler.regTask('dailygameIntegral', async (request) => {
@@ -179,6 +191,7 @@ var start = async (params) => {
     await require('./producGame').doTodayDailyTask(request, options)
   }, {
     ...taskOption,
+    isCircle: true,
     startTime: 20 * 3600
   })
 
