@@ -9,7 +9,7 @@ var transParams = (data) => {
   }
   return params;
 };
-function w() {
+function w () {
   var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}
     , t = [];
   return Object.keys(e).forEach((function (a) {
@@ -29,7 +29,7 @@ var sign = (data) => {
   return crypto.createHash('md5').update(str + params.join('&')).digest('hex')
 }
 
-function encryption(data, key) {
+function encryption (data, key) {
   var iv = "";
   var cipherEncoding = 'base64';
   var cipher = crypto.createCipheriv('aes-128-ecb', key, iv);
@@ -56,7 +56,7 @@ var dailyTurntablePage = {
         'sourceCode': 'lt_turntable'
       })
     })
-    return result.data.data
+    return result.data;
   },
   doTask: async (axios, options) => {
     const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0100,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}`
@@ -103,9 +103,13 @@ var dailyTurntablePage = {
         phone
       })
 
+      if (res.code === 500) {
+        console.error(res.msg);
+        break;
+      }
 
-      playCounts = res.playCounts
-      isLookVideo = res.isLookVideo
+      playCounts = res.data.playCounts
+      isLookVideo = res.data.isLookVideo
 
       if (!playCounts && !isLookVideo) {
         console.log('没有游戏次数')
@@ -248,7 +252,7 @@ var dailyTurntablePage = {
         params,
         jar
       })
-      
+
       if (num) {
         console.log('等待15秒再继续')
         await new Promise((resolve, reject) => setTimeout(resolve, 15 * 1000))

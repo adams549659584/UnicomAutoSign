@@ -131,10 +131,10 @@ var start = async (params) => {
     await require('./dailyYYQ').doTask(request, options)
   }, taskOption)
 
-  // 首页-签到有礼-免费抽-赢Apple Watch(去抽奖)
-  await scheduler.regTask('dailyTurntablePage', async (request) => {
-    await require('./dailyTurntablePage').doTask(request, options)
-  }, taskOption)
+  // 首页-签到有礼-免费抽-赢Apple Watch(去抽奖) 游戏已下线
+  // await scheduler.regTask('dailyTurntablePage', async (request) => {
+  //   await require('./dailyTurntablePage').doTask(request, options)
+  // }, taskOption)
 
   // 首页-签到有礼-赚更多福利-看视频奖励5积分
   await scheduler.regTask('dailyVideo', async (request) => {

@@ -1,5 +1,5 @@
 node_modules
-.vscode
+# .vscode
 yarn.lock
 
 jspm_packages
