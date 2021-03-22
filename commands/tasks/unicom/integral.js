@@ -241,7 +241,7 @@ var integral = {
     let params = {
       'methodType': 'reward',
       'deviceType': 'Android',
-      'clientVersion': '8.0100',
+      'clientVersion': '8.0200',
       'isVideo': 'N'
     }
     let { data, config } = await axios.request({
@@ -304,7 +304,7 @@ var integral = {
     params = {
       'methodType': 'reward',
       'deviceType': 'Android',
-      'clientVersion': '8.0100',
+      'clientVersion': '8.0200',
       'isVideo': 'Y'
     }
     let { data } = await axios.request({

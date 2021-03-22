@@ -231,7 +231,7 @@ var producGame = {
         let params = {
             'methodType': 'popularGames',
             'deviceType': 'Android',
-            'clientVersion': '8.0100',
+            'clientVersion': '8.0200',
         }
         let { data, config } = await axios.request({
             baseURL: 'https://m.client.10010.com/',
@@ -293,7 +293,7 @@ var producGame = {
         let params = {
             'methodType': 'record',
             'deviceType': 'Android',
-            'clientVersion': '8.0100',
+            'clientVersion': '8.0200',
             'gameId': gameId,
             'taskId': ''
         }
@@ -320,7 +320,7 @@ var producGame = {
             'taskCenterId': options.taskCenterId,
             'videoIntegral': '0',
             'isVideo': 'Y',
-            'clientVersion': '8.0100',
+            'clientVersion': '8.0200',
             'deviceType': 'Android'
         }
         let { data, config } = await axios.request({
@@ -344,7 +344,7 @@ var producGame = {
         let params = {
             'methodType': 'queryTaskCenter',
             'deviceType': 'Android',
-            'clientVersion': '8.0100'
+            'clientVersion': '8.0200'
         }
         let { data, config } = await axios.request({
             headers: {
@@ -391,7 +391,7 @@ var producGame = {
                 await producGame.timeTaskQuery(axios, options)
                 await producGame.gameFlowGet(axios, {
                     ...options,
-                    gameId: game.gameId
+                    gameId: game.id
                 })
             })
         }
@@ -406,7 +406,7 @@ var producGame = {
             await new Promise((resolve, reject) => setTimeout(resolve, (Math.floor(Math.random() * 10) + 15) * 1000))
             await producGame.gameFlowGet(axios, {
                 ...options,
-                gameId: game.gameId
+                gameId: game.id
             })
         }
     },
@@ -503,7 +503,7 @@ var producGame = {
             'methodType': 'flowGet',
             'gameId': gameId,
             'deviceType': 'Android',
-            'clientVersion': '8.0100',
+            'clientVersion': '8.0200',
         }
         let { data } = await axios.request({
             baseURL: 'https://m.client.10010.com/',
@@ -533,7 +533,7 @@ var producGame = {
             'methodType': 'taskGetReward',
             'taskCenterId': taskCenterId,
             'deviceType': 'Android',
-            'clientVersion': '8.0100',
+            'clientVersion': '8.0200',
         }
         let { data } = await axios.request({
             headers: {

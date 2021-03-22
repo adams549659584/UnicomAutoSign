@@ -3,7 +3,7 @@ var crypto = require('crypto');
 var moment = require('moment');
 moment.locale('zh-cn');
 // 联通APP版本
-const unicom_version = '8.0100'
+const unicom_version = '8.0200'
 
 const publicKey = `-----BEGIN PUBLIC KEY-----
 MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDc+CZK9bBA9IU+gZUOc6
