@@ -370,7 +370,7 @@ var producGame = {
     doGameFlowTask: async (axios, options) => {
         let { popularList: allgames, jar } = await producGame.popularGames(axios, options)
         let games = await producGame.timeTaskQuery(axios, options)
-        games = allgames.filter(g => games.filter(g => g.state === '0').map(i => i.gameId).indexOf(g.id) !== -1)
+        games = allgames.filter(g => games.filter(g => g.state === '0').map(i => i.id).indexOf(g.id) !== -1)
         console.log('剩余未完成game', games.length)
         let queue = new PQueue({ concurrency: 2 });
 
@@ -473,9 +473,9 @@ var producGame = {
     timeTaskQuery: async (axios, options) => {
         const useragent = buildUnicomUserAgent(options, 'p')
         let params = {
-            'methodType': 'timeTaskQuery',
+            'methodType': 'popularGames',
             'deviceType': 'Android',
-            'clientVersion': '8.0100'
+            'clientVersion': '8.0200'
         }
         let { data } = await axios.request({
             baseURL: 'https://m.client.10010.com/',
@@ -490,7 +490,7 @@ var producGame = {
         })
         if (data) {
             console.log(data.msg)
-            return data.data//0未进行 state=1待领取 state=2已完成
+            return data.popularList//0未进行 state=1待领取 state=2已完成
         } else {
             console.log('记录失败')
         }
