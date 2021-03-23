@@ -21,7 +21,6 @@ jobs:
       ENABLE_BILIBILI: ${{secrets.ENABLE_BILIBILI}}
       ENABLE_IQIYI: ${{secrets.ENABLE_IQIYI}}
       ENABLE_UNICOM: ${{secrets.ENABLE_UNICOM}}
-      ENABLE_CACHE: FALSE
     
     runs-on: ubuntu-latest
 
@@ -52,34 +51,31 @@ jobs:
         echo "::set-output name=dir::$(npm config get cache)"
 
     - name: restore npm cache
-      if: ${{ env.ENABLE_CACHE }}
       uses: actions/cache@v2
       id: use-npm-cache
       with:
         path: ${{ steps.npm-cache.outputs.dir }}
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
 
-    - name: restore npm dependencies
-      if: ${{ env.ENABLE_CACHE }}
-      uses: actions/cache@v2
-      id: use-npm-depends
-      with:
-        path: |
-          node_modules
-          */*/node_modules
-        key: ${{ runner.os }}-depends-${{ hashFiles('**/package-lock.json') }}
+    # - name: restore npm dependencies
+    #   uses: actions/cache@v2
+    #   id: use-npm-depends
+    #   with:
+    #     path: |
+    #       node_modules
+    #       */*/node_modules
+    #     key: ${{ runner.os }}-depends-${{ hashFiles('**/package-lock.json') }}
 
-    - name: restore task cache
-      if: ${{ env.ENABLE_CACHE }}
-      uses: actions/cache@v2
-      id: use-task-cache
-      with:
-        path: |
-          /home/runner/.AutoSignMachine
-        key: ${{ runner.os }}-task-${{ hashFiles('**/package-lock.json') }}
+    # - name: restore task cache
+    #   uses: actions/cache@v2
+    #   id: use-task-cache
+    #   with:
+    #     path: |
+    #       /home/runner/.AutoSignMachine
+    #     key: ${{ runner.os }}-task-${{ hashFiles('**/package-lock.json') }}
 
     - name: Install dependencies
-      if: steps.use-npm-cache.outputs.cache-hit != 'true' || steps.use-npm-depends.outputs.cache-hit != 'true'
+      # if: steps.use-npm-cache.outputs.cache-hit != 'true' || steps.use-npm-depends.outputs.cache-hit != 'true'
       run: npm install
        
     # 运行 52pojie 签到任务
