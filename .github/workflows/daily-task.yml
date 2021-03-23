@@ -21,6 +21,7 @@ jobs:
       ENABLE_BILIBILI: ${{secrets.ENABLE_BILIBILI}}
       ENABLE_IQIYI: ${{secrets.ENABLE_IQIYI}}
       ENABLE_UNICOM: ${{secrets.ENABLE_UNICOM}}
+      ENABLE_CACHE: FALSE
     
     runs-on: ubuntu-latest
 
@@ -51,6 +52,7 @@ jobs:
         echo "::set-output name=dir::$(npm config get cache)"
 
     - name: restore npm cache
+      if: ${{ env.ENABLE_CACHE }}
       uses: actions/cache@v2
       id: use-npm-cache
       with:
@@ -58,6 +60,7 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
 
     - name: restore npm dependencies
+      if: ${{ env.ENABLE_CACHE }}
       uses: actions/cache@v2
       id: use-npm-depends
       with:
@@ -67,6 +70,7 @@ jobs:
         key: ${{ runner.os }}-depends-${{ hashFiles('**/package-lock.json') }}
 
     - name: restore task cache
+      if: ${{ env.ENABLE_CACHE }}
       uses: actions/cache@v2
       id: use-task-cache
       with:
