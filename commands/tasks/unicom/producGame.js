@@ -372,9 +372,9 @@ var producGame = {
         let games = await producGame.timeTaskQuery(axios, options)
         games = allgames.filter(g => games.filter(g => g.state === '0').map(i => i.id).indexOf(g.id) !== -1)
         console.log('剩余未完成game', games.length)
-        let queue = new PQueue({ concurrency: 2 });
+        let queue = new PQueue({ concurrency: 1 });
 
-        console.log('调度任务中', '并发数', 2)
+        console.log('调度任务中', '并发数', 1)
         for (let game of games) {
             queue.add(async () => {
                 console.log(game.name)
@@ -414,9 +414,9 @@ var producGame = {
         let { games, jar } = await producGame.getTaskList(axios, options)
         games = games.filter(d => d.task === '5' && d.reachState === '0' && d.task_type === 'duration')
         console.log('剩余未完成game', games.length)
-        let queue = new PQueue({ concurrency: 2 });
+        let queue = new PQueue({ concurrency: 1 });
 
-        console.log('调度任务中', '并发数', 2)
+        console.log('调度任务中', '并发数', 1)
         for (let game of games) {
             queue.add(async () => {
                 console.log(game.name)
