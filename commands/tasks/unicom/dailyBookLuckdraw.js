@@ -24,7 +24,7 @@ var sign = (data) => {
 
 var dailyBookLuckdraw = {
     oauthMethod: async (axios, options) => {
-        const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0100,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}    `
+        const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0200,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}    `
         let { data } = await axios.request({
             headers: {
                 "user-agent": useragent,
@@ -37,7 +37,7 @@ var dailyBookLuckdraw = {
         return data.data.key
     },
     login: async (axios, options) => {
-        const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0100,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}    `
+        const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0200,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}    `
 
         //密码加密
         var modulus = "00D9C7EE8B8C599CD75FC2629DBFC18625B677E6BA66E81102CF2D644A5C3550775163095A3AA7ED9091F0152A0B764EF8C301B63097495C7E4EA7CF2795029F61229828221B510AAE9A594CA002BA4F44CA7D1196697AEB833FD95F2FA6A5B9C2C0C44220E1761B4AB1A1520612754E94C55DC097D02C2157A8E8F159232ABC87";
@@ -68,7 +68,7 @@ var dailyBookLuckdraw = {
                 "user-agent": useragent
             },
             jar,
-            url: `http://m.iread.wo.cn/touchextenernal/seeadvertluckdraw/index.action?channelid=18000018&yw_code=&desmobile=${options.user}&version=android@8.0100`,
+            url: `http://m.iread.wo.cn/touchextenernal/seeadvertluckdraw/index.action?channelid=18000018&yw_code=&desmobile=${options.user}&version=android@8.0200`,
             method: 'GET'
         })
 
@@ -77,7 +77,7 @@ var dailyBookLuckdraw = {
         }
     },
     doTask: async (axios, options) => {
-        const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0100,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}    `
+        const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0200,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}    `
         let Authorization = await dailyBookLuckdraw.oauthMethod(axios, options)
         let { jar } = await dailyBookLuckdraw.login(axios, {
             ...options,
@@ -99,7 +99,7 @@ var dailyBookLuckdraw = {
                     'netWay': 'Wifi',
                     'remark': '阅读每日读书福利广告1',
                     'remark1': '阅读每日读书福利广告1',
-                    'version': `android@8.0100`,
+                    'version': `android@8.0200`,
                     'codeId': 945535424
                 }
 

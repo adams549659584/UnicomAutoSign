@@ -39,14 +39,14 @@ function encryption(data, key) {
 
 var dailyGrabdollPage = {
     getState: async (axios, options) => {
-        const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0100,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}`
+        const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0200,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}`
         const { searchParams, ecs_token } = options
         let phone = encryption(options.user, 'gb6YCccUvth75Tm2')
         let timestamp = moment().format('YYYYMMDDHHmmss')
         let { data, config } = await axios.request({
             headers: {
                 "user-agent": useragent,
-                "referer": `https://wxapp.msmds.cn/h5/react_web/unicom/grabdollPage?source=unicom&type=02&ticket=${searchParams.ticket}&version=android@8.0100&timestamp=${timestamp}&desmobile=${options.user}&num=0&postage=${searchParams.postage}&duanlianjieabc=tbKHR&userNumber=${options.user}`,
+                "referer": `https://wxapp.msmds.cn/h5/react_web/unicom/grabdollPage?source=unicom&type=02&ticket=${searchParams.ticket}&version=android@8.0200&timestamp=${timestamp}&desmobile=${options.user}&num=0&postage=${searchParams.postage}&duanlianjieabc=tbKHR&userNumber=${options.user}`,
             },
             url: `https://wxapp.msmds.cn/jplus/api/channelGrabDoll/index`,
             method: 'POST',
@@ -71,7 +71,7 @@ var dailyGrabdollPage = {
         }
     },
     doTask: async (axios, options) => {
-        const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0100,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}`
+        const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0200,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}`
         let searchParams = {}
         let result = await axios.request({
             baseURL: 'https://m.client.10010.com/',
@@ -130,7 +130,7 @@ var dailyGrabdollPage = {
                     'netWay': 'Wifi',
                     'remark': '签到看视频得积分2',
                     'remark1': '签到看视频得积分2',
-                    'version': `android@8.0100`,
+                    'version': `android@8.0200`,
                     'codeId': 945474727
                 }
 
@@ -154,7 +154,7 @@ var dailyGrabdollPage = {
                 result = await axios.request({
                     headers: {
                         "user-agent": useragent,
-                        "referer": `https://wxapp.msmds.cn/h5/react_web/unicom/grabdollPage?source=unicom&type=02&ticket=${searchParams.ticket}&version=android@8.0100&timestamp=${timestamp}&desmobile=${options.user}&num=0&postage=${searchParams.postage}&duanlianjieabc=tbKHR&userNumber=${options.user}`,
+                        "referer": `https://wxapp.msmds.cn/h5/react_web/unicom/grabdollPage?source=unicom&type=02&ticket=${searchParams.ticket}&version=android@8.0200&timestamp=${timestamp}&desmobile=${options.user}&num=0&postage=${searchParams.postage}&duanlianjieabc=tbKHR&userNumber=${options.user}`,
                         "origin": "https://wxapp.msmds.cn"
                     },
                     jar: gjar,
@@ -175,7 +175,7 @@ var dailyGrabdollPage = {
             let res = await axios.request({
                 headers: {
                     "user-agent": useragent,
-                    "referer": `https://wxapp.msmds.cn/h5/react_web/unicom/grabdollPage?source=unicom&type=02&ticket=${searchParams.ticket}&version=android@8.0100&timestamp=${timestamp}&desmobile=${options.user}&num=0&postage=${searchParams.postage}&duanlianjieabc=tbKHR&userNumber=${options.user}`,
+                    "referer": `https://wxapp.msmds.cn/h5/react_web/unicom/grabdollPage?source=unicom&type=02&ticket=${searchParams.ticket}&version=android@8.0200&timestamp=${timestamp}&desmobile=${options.user}&num=0&postage=${searchParams.postage}&duanlianjieabc=tbKHR&userNumber=${options.user}`,
                 },
                 jar: gjar,
                 url: `https://wxapp.msmds.cn/jplus/api/channelGrabDoll/startGame`,

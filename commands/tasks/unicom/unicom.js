@@ -93,24 +93,24 @@ var start = async (params) => {
   // })
 
   // 首页-签到有礼-免费抽-抓OPPO手机
-  await scheduler.regTask('dailyGrabdollPage', async (request) => {
-    await require('./dailyGrabdollPage').doTask(request, options)
-  }, taskOption)
+  // await scheduler.regTask('dailyGrabdollPage', async (request) => {
+  //   await require('./dailyGrabdollPage').doTask(request, options)
+  // }, taskOption)
 
   // 首页-签到有礼-免费抽-拿666积分-豪礼大派送抽奖
-  await scheduler.regTask('jflottery', async (request) => {
-    await require('./jflottery').timesDraw(request, options)
-  }, taskOption)
+  // await scheduler.regTask('jflottery', async (request) => {
+  //   await require('./jflottery').timesDraw(request, options)
+  // }, taskOption)
 
   // 首页-签到有礼-免费抽-拿苹果iPad Pro(摇一摇)
-  await scheduler.regTask('dailyYYY', async (request) => {
-    await require('./dailyYYY').doTask(request, options)
-  }, taskOption)
+  // await scheduler.regTask('dailyYYY', async (request) => {
+  //   await require('./dailyYYY').doTask(request, options)
+  // }, taskOption)
 
   // 首页-签到有礼-免费抽-华为mate40pro(刮刮乐)
-  await scheduler.regTask('dailyVideoScratchcard', async (request) => {
-    await require('./dailyVideoScratchcard').doTask(request, options)
-  }, taskOption)
+  // await scheduler.regTask('dailyVideoScratchcard', async (request) => {
+  //   await require('./dailyVideoScratchcard').doTask(request, options)
+  // }, taskOption)
 
   // 首页-签到有礼-免费抽-赢三星Galaxy Z(试试手气)
   // await scheduler.regTask('dailyCheapStorePage', async (request) => {
@@ -122,14 +122,14 @@ var start = async (params) => {
   // })
 
   // 首页-签到有礼-免费抽-拆华为Pad(去抽奖)
-  await scheduler.regTask('dailyLKMH', async (request) => {
-    await require('./dailyLKMH').doTask(request, options)
-  }, taskOption)
+  // await scheduler.regTask('dailyLKMH', async (request) => {
+  //   await require('./dailyLKMH').doTask(request, options)
+  // }, taskOption)
 
   // 首页-签到有礼-免费抽-拿iPhone12(摇一摇)
-  await scheduler.regTask('dailyYYQ', async (request) => {
-    await require('./dailyYYQ').doTask(request, options)
-  }, taskOption)
+  // await scheduler.regTask('dailyYYQ', async (request) => {
+  //   await require('./dailyYYQ').doTask(request, options)
+  // }, taskOption)
 
   // 首页-签到有礼-免费抽-赢Apple Watch(去抽奖) 游戏已下线
   // await scheduler.regTask('dailyTurntablePage', async (request) => {
@@ -137,9 +137,9 @@ var start = async (params) => {
   // }, taskOption)
 
   // 首页-签到有礼-赚更多福利-看视频奖励5积分
-  await scheduler.regTask('dailyVideo', async (request) => {
-    await require('./dailyVideo').doTask(request, options)
-  }, taskOption)
+  // await scheduler.regTask('dailyVideo', async (request) => {
+  //   await require('./dailyVideo').doTask(request, options)
+  // }, taskOption)
 
   // 首页-签到有礼-赚更多福利-天天抽好礼
   await scheduler.regTask('dailylottery', async (request) => {
@@ -147,13 +147,13 @@ var start = async (params) => {
   }, taskOption)
 
   // 首页-游戏-娱乐中心-每日打卡
-  await scheduler.regTask('producGameSignin', async (request) => {
-    await require('./producGame').gameSignin(request, options)
-    await require('./producGame').gameBox(request, options)
-  }, {
-    ...taskOption,
-    isCircle: true
-  })
+  // await scheduler.regTask('producGameSignin', async (request) => {
+  //   await require('./producGame').gameSignin(request, options)
+  //   await require('./producGame').gameBox(request, options)
+  // }, {
+  //   ...taskOption,
+  //   isCircle: true
+  // })
 
   // 首页-游戏-娱乐中心-天天领取3G流量包
   await scheduler.regTask('dailygameflow', async (request) => {
@@ -169,12 +169,12 @@ var start = async (params) => {
   }, taskOption)
 
   // 首页-知识-限时免费（连续7天阶梯激励）
-  await scheduler.regTask('dailyCourse', async (request) => {
-    await require('./dailyCourse').doTask(request, options)
-  }, {
-    ...taskOption,
-    startTime: 9 * 3600
-  })
+  // await scheduler.regTask('dailyCourse', async (request) => {
+  //   await require('./dailyCourse').doTask(request, options)
+  // }, {
+  //   ...taskOption,
+  //   startTime: 9 * 3600
+  // })
 
   // await require('./integral').getflDetail(request, options)
   // await require('./integral').getTxDetail(request, options)
@@ -187,46 +187,46 @@ var start = async (params) => {
   }, taskOption)
 
   // 首页-游戏-娱乐中心-每日打卡-完成今日任务(200m)
-  await scheduler.regTask('todayDailyTask', async (request) => {
-    await require('./producGame').doTodayDailyTask(request, options)
-  }, {
-    ...taskOption,
-    isCircle: true,
-    startTime: 20 * 3600
-  })
+  // await scheduler.regTask('todayDailyTask', async (request) => {
+  //   await require('./producGame').doTodayDailyTask(request, options)
+  // }, {
+  //   ...taskOption,
+  //   isCircle: true,
+  //   startTime: 20 * 3600
+  // })
 
   // 首页-签到有礼-居家娱乐馆
-  await scheduler.regTask('gameYearBox', async (request) => {
-    await require('./gameYearBox').doTask(request, options)
-  }, {
-    ...taskOption,
-    startTime: 20 * 3600
-  })
+  // await scheduler.regTask('gameYearBox', async (request) => {
+  //   await require('./gameYearBox').doTask(request, options)
+  // }, {
+  //   ...taskOption,
+  //   startTime: 20 * 3600
+  // })
 
   // 首页-牛气-秒杀抢兑
-  await scheduler.regTask('NiujieSpikePrize', async (request) => {
-    await require('./Niujie').spikePrize(request, options)
-  }, {
-    ...taskOption,
-    startTime: 9.6 * 3600,
-    ignoreRelay: true
-  })
+  // await scheduler.regTask('NiujieSpikePrize', async (request) => {
+  //   await require('./Niujie').spikePrize(request, options)
+  // }, {
+  //   ...taskOption,
+  //   startTime: 9.6 * 3600,
+  //   ignoreRelay: true
+  // })
 
   // 首页-牛气-转盘抽奖
-  await scheduler.regTask('NiujieTask', async (request) => {
-    await require('./Niujie').doTask(request, options)
-  }, taskOption)
+  // await scheduler.regTask('NiujieTask', async (request) => {
+  //   await require('./Niujie').doTask(request, options)
+  // }, taskOption)
 
 
   // 首页-牛气-场馆领牛气
-  await scheduler.regTask('NiujieReceiveCalf', async (request) => {
-    await require('./Niujie').receiveCalf(request, options)
-  }, {
-    isCircle: true,
-    intervalTime: 1 * 3600,
-    startTime: 1,
-    ...taskOption
-  })
+  // await scheduler.regTask('NiujieReceiveCalf', async (request) => {
+  //   await require('./Niujie').receiveCalf(request, options)
+  // }, {
+  //   isCircle: true,
+  //   intervalTime: 1 * 3600,
+  //   startTime: 1,
+  //   ...taskOption
+  // })
 }
 module.exports = {
   start

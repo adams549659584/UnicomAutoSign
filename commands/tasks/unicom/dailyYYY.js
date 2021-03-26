@@ -61,7 +61,7 @@ var decrypt = function (word, keyStr) {
 
 var dailyYYY = {
   doTask: async (axios, options) => {
-    const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0100,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}`
+    const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0200,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}`
     let searchParams = {}
     let result = await axios.request({
       baseURL: 'https://m.client.10010.com/',
@@ -174,7 +174,7 @@ var dailyYYY = {
           'netWay': 'Wifi',
           'remark1': '签到小游戏摇摇乐不倒翁',
           'remark': '签到小游戏翻倍得积分',
-          'version': `android@8.0100`,
+          'version': `android@8.0200`,
           'codeId': 945689604
         }
         params['sign'] = sign([params.arguments1, params.arguments2, params.arguments3, params.arguments4])
@@ -193,7 +193,7 @@ var dailyYYY = {
             "user-agent": useragent,
             "referer": `https://img.client.10010.com/`,
           },
-          url: `https://m.jf.10010.com/jf-order/avoidLogin/forActive/yyyqd?ticket=${searchParams.ticket}&type=02&version=android@8.0100&timestamp=${timestamp}&desmobile=${options.user}&num=0&postage=${searchParams.postage}&duanlianjieabc=tbkwx&userNumber=${options.user}`,
+          url: `https://m.jf.10010.com/jf-order/avoidLogin/forActive/yyyqd?ticket=${searchParams.ticket}&type=02&version=android@8.0200&timestamp=${timestamp}&desmobile=${options.user}&num=0&postage=${searchParams.postage}&duanlianjieabc=tbkwx&userNumber=${options.user}`,
           method: 'GET'
         })
 
@@ -288,7 +288,7 @@ var dailyYYY = {
       'arguments4': new Date().getTime(), // time
       'arguments6': '517050707',
       'netWay': 'Wifi',
-      'version': `android@8.0100`
+      'version': `android@8.0200`
     }
     params['sign'] = sign([params.arguments1, params.arguments2, params.arguments3, params.arguments4])
     let { num, jar } = await require('./taskcallback').query(axios, {
@@ -313,7 +313,7 @@ var dailyYYY = {
       'orderId': crypto.createHash('md5').update(new Date().getTime() + '').digest('hex'),
       'netWay': 'Wifi',
       'remark': '签到小游戏摇摇乐不倒翁',
-      'version': `android@8.0100`,
+      'version': `android@8.0200`,
       'codeId': 945689604
     }
     params['sign'] = sign([params.arguments1, params.arguments2, params.arguments3, params.arguments4])
@@ -325,7 +325,7 @@ var dailyYYY = {
   },
   lookVideoDoubleResult: async (axios, options) => {
     let { Authorization, activityId, winningRecordId } = options
-    const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0100,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}`
+    const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0200,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}`
     let res = await axios.request({
       headers: {
         "Authorization": `Bearer ${Authorization}`,

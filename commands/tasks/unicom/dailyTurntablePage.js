@@ -40,7 +40,7 @@ function encryption (data, key) {
 var dailyTurntablePage = {
   getGoodsList: async (axios, options) => {
     let phone = encryption(options.user, 'gb6YCccUvth75Tm2')
-    const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0100,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}    `
+    const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0200,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}    `
     let result = await axios.request({
       headers: {
         "user-agent": useragent,
@@ -59,7 +59,7 @@ var dailyTurntablePage = {
     return result.data;
   },
   doTask: async (axios, options) => {
-    const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0100,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}`
+    const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0200,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}`
     let searchParams = {}
     let result = await axios.request({
       baseURL: 'https://m.client.10010.com/',
@@ -129,7 +129,7 @@ var dailyTurntablePage = {
           'arguments9': '',
           'netWay': 'Wifi',
           'remark': '签到小游戏买什么都省转盘抽奖',
-          'version': `android@8.0100`,
+          'version': `android@8.0200`,
           'codeId': 945535695
         }
         params['sign'] = sign([params.arguments1, params.arguments2, params.arguments3, params.arguments4])
@@ -153,7 +153,7 @@ var dailyTurntablePage = {
         result = await axios.request({
           headers: {
             "user-agent": useragent,
-            "referer": `https://wxapp.msmds.cn/h5/react_web/unicom/turntablePage?ticket=${searchParams.ticket}&type=02&version=android@8.0100&timestamp=${timestamp}&desmobile=${options.user}&num=0&postage=${searchParams.postage}&userNumber=${options.user}`,
+            "referer": `https://wxapp.msmds.cn/h5/react_web/unicom/turntablePage?ticket=${searchParams.ticket}&type=02&version=android@8.0200&timestamp=${timestamp}&desmobile=${options.user}&num=0&postage=${searchParams.postage}&userNumber=${options.user}`,
             "origin": "https://wxapp.msmds.cn"
           },
           url: `https://wxapp.msmds.cn/jplus/api/change/luck/draw/gift/v1/liantong/look/video`,
@@ -182,7 +182,7 @@ var dailyTurntablePage = {
       result = await axios.request({
         headers: {
           "user-agent": useragent,
-          "referer": `https://wxapp.msmds.cn/h5/react_web/unicom/turntablePage?ticket=${searchParams.ticket}&type=02&version=android@8.0100&timestamp=${timestamp}&desmobile=${options.user}&num=0&postage=${searchParams.postage}&userNumber=${options.user}`,
+          "referer": `https://wxapp.msmds.cn/h5/react_web/unicom/turntablePage?ticket=${searchParams.ticket}&type=02&version=android@8.0200&timestamp=${timestamp}&desmobile=${options.user}&num=0&postage=${searchParams.postage}&userNumber=${options.user}`,
           "origin": "https://wxapp.msmds.cn"
         },
         url: `https://wxapp.msmds.cn/jplus/api/change/luck/draw/gift/v1/playLuckDraw?` + w(a),
@@ -217,7 +217,7 @@ var dailyTurntablePage = {
       'arguments4': new Date().getTime(), // time
       'arguments6': '517050707',
       'netWay': 'Wifi',
-      'version': `android@8.0100`
+      'version': `android@8.0200`
     }
     params['sign'] = sign([params.arguments1, params.arguments2, params.arguments3, params.arguments4])
     let { num } = await require('./taskcallback').query(axios, {
@@ -243,7 +243,7 @@ var dailyTurntablePage = {
         'orderId': crypto.createHash('md5').update(new Date().getTime() + '').digest('hex'),
         'netWay': 'Wifi',
         'remark': '签到小游戏买什么都省转盘抽奖',
-        'version': `android@8.0100`,
+        'version': `android@8.0200`,
         'codeId': 945535695
       }
       params['sign'] = sign([params.arguments1, params.arguments2, params.arguments3, params.arguments4])

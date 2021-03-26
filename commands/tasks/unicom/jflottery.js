@@ -56,7 +56,7 @@ var sign = (data) => {
 }
 module.exports = {
     getTicket: async (axios, options) => {
-        const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0100,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}    `
+        const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0200,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}    `
         let searchParams = {}
         let res = await axios.request({
             headers: {
@@ -86,7 +86,7 @@ module.exports = {
         }
     },
     timesDraw: async (axios, options) => {
-        const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0100,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}    `
+        const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0200,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}    `
         let { searchParams, jar } = await module.exports.getTicket(axios, options)
         let cookiesJson = jar.toJSON()
         let jfid = cookiesJson.cookies.find(i => i.key == '_jf_id')
@@ -162,7 +162,7 @@ module.exports = {
                     'netWay': 'Wifi',
                     'remark1': '到小游戏豪礼派送',
                     'remark': '签到小游戏翻倍得积分',
-                    'version': `android@8.0100`,
+                    'version': `android@8.0200`,
                     'codeId': 945705532
                 }
                 params['sign'] = sign([params.arguments1, params.arguments2, params.arguments3, params.arguments4])

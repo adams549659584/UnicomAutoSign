@@ -26,7 +26,7 @@ var dailyVideo = {
       'arguments4': new Date().getTime(), // time
       'arguments6': account.accountChannel,
       'netWay': 'Wifi',
-      'version': `android@8.0100`
+      'version': `android@8.0200`
     }
     params['sign'] = sign([params.arguments1, params.arguments2, params.arguments3, params.arguments4])
     return await require('./taskcallback').query(request, {
@@ -54,7 +54,7 @@ var dailyVideo = {
         'orderId': crypto.createHash('md5').update(new Date().getTime() + '').digest('hex'),
         'netWay': 'Wifi',
         'remark': '签到看视频得积分',
-        'version': `android@8.0100`,
+        'version': `android@8.0200`,
         'codeId': 945535616
       }
       params['sign'] = sign([params.arguments1, params.arguments2, params.arguments3, params.arguments4])

@@ -69,7 +69,7 @@ module.exports = {
         }
         var rdm = {
             android_version: '7.1.2',
-            unicom_version: 'android@8.0100',
+            unicom_version: 'android@8.0200',
             deviceBrand: 'samsung',
             deviceModel: 'SM-G977N',
             buildSn: 'LMY48Z',

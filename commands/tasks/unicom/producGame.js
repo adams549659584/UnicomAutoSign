@@ -576,7 +576,7 @@ var producGame = {
             'arguments4': new Date().getTime(), // time
             'arguments6': '',
             'netWay': 'Wifi',
-            'version': `android@8.0100`,
+            'version': `android@8.0200`,
         }
         params['sign'] = sign([params.arguments1, params.arguments2, params.arguments3, params.arguments4])
         return await require('./taskcallback').query(request, {
@@ -598,7 +598,7 @@ var producGame = {
             'netWay': 'Wifi',
             'remark1': '游戏频道看视频得积分',
             'remark': '游戏视频任务积分',
-            'version': `android@8.0100`,
+            'version': `android@8.0200`,
             'codeId': 945535736
         }
         params['sign'] = sign([params.arguments1, params.arguments2, params.arguments3, params.arguments4])

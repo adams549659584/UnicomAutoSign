@@ -40,7 +40,7 @@ function encryption(data, key) {
 var dailyCheapStorePage = {
   getGoodsList: async (axios, options) => {
     let phone = encryption(options.user, 'gb6YCccUvth75Tm2')
-    const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0100,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}    `
+    const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0200,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}    `
     let result = await axios.request({
       headers: {
         "user-agent": useragent,
@@ -62,7 +62,7 @@ var dailyCheapStorePage = {
     return result.data.data
   },
   doTask: async (axios, options) => {
-    const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0100,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}`
+    const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0200,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}`
     let searchParams = {}
     let result = await axios.request({
       baseURL: 'https://m.client.10010.com/',
@@ -167,7 +167,7 @@ var dailyCheapStorePage = {
       result = await axios.request({
         headers: {
           "user-agent": useragent,
-          "referer": `https://wxapp.msmds.cn/h5/react_web/unicom/cheapStorePage?source=unicom&type=02&ticket=${searchParams.ticket}&version=android@8.0100&timestamp=${timestamp}&desmobile=${options.user}&num=0&postage=${searchParams.postage}&duanlianjieabc=tbkEG&userNumber=${options.user}`,
+          "referer": `https://wxapp.msmds.cn/h5/react_web/unicom/cheapStorePage?source=unicom&type=02&ticket=${searchParams.ticket}&version=android@8.0200&timestamp=${timestamp}&desmobile=${options.user}&num=0&postage=${searchParams.postage}&duanlianjieabc=tbkEG&userNumber=${options.user}`,
           "origin": "https://wxapp.msmds.cn"
         },
         url: `https://wxapp.msmds.cn/jplus/api/change/collect/chip/gift/v1/play/luck/draw?` + w(a),
@@ -196,7 +196,7 @@ var dailyCheapStorePage = {
   },
   getBottleState: async (axios, options) => {
     const { jar, searchParams, ecs_token } = options
-    const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0100,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}`
+    const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0200,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}`
     let phone = encryption(options.user, 'gb6YCccUvth75Tm2')
 
     let a = {
@@ -210,7 +210,7 @@ var dailyCheapStorePage = {
     result = await axios.request({
       headers: {
         "user-agent": useragent,
-        "referer": `https://wxapp.msmds.cn/h5/react_web/unicom/cheapStorePage?source=unicom&type=02&ticket=${searchParams.ticket}&version=android@8.0100&timestamp=${timestamp}&desmobile=${options.user}&num=0&postage=${searchParams.postage}&duanlianjieabc=tbkEG&userNumber=${options.user}`,
+        "referer": `https://wxapp.msmds.cn/h5/react_web/unicom/cheapStorePage?source=unicom&type=02&ticket=${searchParams.ticket}&version=android@8.0200&timestamp=${timestamp}&desmobile=${options.user}&num=0&postage=${searchParams.postage}&duanlianjieabc=tbkEG&userNumber=${options.user}`,
         "origin": "https://wxapp.msmds.cn"
       },
       url: `https://wxapp.msmds.cn/jplus/api/change/collect/chip/gift/v1/bottle/add`,
@@ -240,7 +240,7 @@ var dailyCheapStorePage = {
       console.log('跳过获取能量瓶')
       return 2
     }
-    const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0100,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}`
+    const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0200,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}`
     let phone = encryption(options.user, 'gb6YCccUvth75Tm2')
     // 每4小时3次, 等每轮机会用完再获取
 
@@ -255,7 +255,7 @@ var dailyCheapStorePage = {
       'arguments9': '',
       'netWay': 'Wifi',
       'remark': '签到小游戏买什么都省申请便利店抽奖',
-      'version': `android@8.0100`,
+      'version': `android@8.0200`,
       'codeId': 945535693
     }
     params['sign'] = sign([params.arguments1, params.arguments2, params.arguments3, params.arguments4])
@@ -280,7 +280,7 @@ var dailyCheapStorePage = {
     result = await axios.request({
       headers: {
         "user-agent": useragent,
-        "referer": `https://wxapp.msmds.cn/h5/react_web/unicom/cheapStorePage?source=unicom&type=02&ticket=${searchParams.ticket}&version=android@8.0100&timestamp=${timestamp}&desmobile=${options.user}&num=0&postage=${searchParams.postage}&duanlianjieabc=tbkEG&userNumber=${options.user}`,
+        "referer": `https://wxapp.msmds.cn/h5/react_web/unicom/cheapStorePage?source=unicom&type=02&ticket=${searchParams.ticket}&version=android@8.0200&timestamp=${timestamp}&desmobile=${options.user}&num=0&postage=${searchParams.postage}&duanlianjieabc=tbkEG&userNumber=${options.user}`,
         "origin": "https://wxapp.msmds.cn"
       },
       url: `https://wxapp.msmds.cn/jplus/api/change/collect/chip/gift/v1/bottle/add`,
@@ -306,7 +306,7 @@ var dailyCheapStorePage = {
   // 能量瓶兑换机会
   bottleExpend: async (axios, options) => {
     const { jar, searchParams, ecs_token } = options
-    const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0100,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}`
+    const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0200,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}`
     let phone = encryption(options.user, 'gb6YCccUvth75Tm2')
     let a = {
       'channelId': 'LT_channel',
@@ -318,7 +318,7 @@ var dailyCheapStorePage = {
     result = await axios.request({
       headers: {
         "user-agent": useragent,
-        "referer": `https://wxapp.msmds.cn/h5/react_web/unicom/cheapStorePage?source=unicom&type=02&ticket=${searchParams.ticket}&version=android@8.0100&timestamp=${timestamp}&desmobile=${options.user}&num=0&postage=${searchParams.postage}&duanlianjieabc=tbkEG&userNumber=${options.user}`,
+        "referer": `https://wxapp.msmds.cn/h5/react_web/unicom/cheapStorePage?source=unicom&type=02&ticket=${searchParams.ticket}&version=android@8.0200&timestamp=${timestamp}&desmobile=${options.user}&num=0&postage=${searchParams.postage}&duanlianjieabc=tbkEG&userNumber=${options.user}`,
         "origin": "https://wxapp.msmds.cn"
       },
       url: `https://wxapp.msmds.cn/jplus/api/change/collect/chip/gift/v1/bottle/expend`,

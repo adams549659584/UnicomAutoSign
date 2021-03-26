@@ -102,7 +102,7 @@ var dailysignin = {
   },
   lookVideoDouble: async (axios, options) => {
     const { jar } = options
-    const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0100,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}`
+    const useragent = `Mozilla/5.0 (Linux; Android 7.1.2; SM-G977N Build/LMY48Z; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:android@8.0200,desmobile:${options.user}};devicetype{deviceBrand:samsung,deviceModel:SM-G977N};{yw_code:}`
     let params = {
       'arguments1': '',
       'arguments2': '',
@@ -115,7 +115,7 @@ var dailysignin = {
       'netWay': 'Wifi',
       'remark1': '签到看视频翻倍得积分',
       'remark': '签到积分翻倍',
-      'version': `android@8.0100`,
+      'version': `android@8.0200`,
       'codeId': 945535743
     }
     params['sign'] = sign([params.arguments1, params.arguments2, params.arguments3, params.arguments4])

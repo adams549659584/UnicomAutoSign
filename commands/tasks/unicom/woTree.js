@@ -168,7 +168,7 @@ var woTree = {
           'netWay': 'Wifi',
           'remark1': '沃之树看视频得浇水机会',
           'remark': '',
-          'version': `android@8.0100`,
+          'version': `android@8.0200`,
           'codeId': 945535626
         }
         params['sign'] = sign([params.arguments1, params.arguments2, params.arguments3, params.arguments4])
